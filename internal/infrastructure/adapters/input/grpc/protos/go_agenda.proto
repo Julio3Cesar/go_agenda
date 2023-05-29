@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package grpc_protos;
+
+option go_package = "grpc_protocol_buffers/";
+
+service ContactService {
+  rpc Create(Contact) returns (CreatedContact) {}
+}
+
+message Contact {
+  string name = 1;
+  string phone = 2;
+  string email = 3;
+}
+
+message CreatedContact {
+  string id = 1;
+  string name = 2;
+  string phone = 3;
+  string email = 4;
+}
